@@ -1,0 +1,151 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+%%% modified by Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+  BoldFont=LinLibertine_RB.otf,
+  ItalicFont=LinLibertine_RI.otf,
+  BoldItalicFont=LinLibertine_RBI.otf
+]{LinLibertine_R.otf}
+\setmonofont[Scale=0.8]{DejaVuSansMono.ttf}
+
+\usepackage[CJKchecksingle]{xeCJK}
+\setCJKmainfont[
+    BoldFont={Noto Sans CJK SC Bold}
+    ]{Noto Sans CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Migu 1M}
+\punctstyle{hangmobanjiao}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm, 
+bookmarks, colorlinks, breaklinks, unicode,
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={C++软件工程师},
+	pdfauthor={王阳明},
+  pdfproducer={xelatex}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+ 
+\pagestyle{empty}  % no page number for the second and the later pages  
+\thispagestyle{empty} % no page number for the first page
+
+% DOCUMENT
+\begin{document}
+{\LARGE 王阳明}\\[1cm]
+
+ Born:   Juny 02, 1994-大同市, 山西\\
+ Phone: \texttt{168-3427-5659}\\
+ email: \href{mailto:personalemail@outlook.com}{personalemail@outlook.com}\\
+
+%\hrule
+\section*{教育经历}
+\noindent
+\years{2011-2015}\textsc{英国国王学院}, 计算机科学\\
+
+%%\hrule
+\section*{工作经历} 
+\years{2017-2018}XXXXX科技有限公司, \emph{项目经理}\\
+\years{2016-2017}XXXXX软件开发公司, \emph{软件工程师}\\
+\years{2015-2016}XXXXX科技有限公司, \emph{软件工程师}\\
+
+\section*{项目经验}
+
+\subsection*{\years{2017-2018} \textbf{视频播放器}}
+\noindent
+\small{项目的摘要介绍，我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何}
+\begin{itemize}
+  \item[-] 在项目中使用boost库通过查找资料完成视频解码器模块
+  \item[-] 改进对于网络的支持，研究RTSP/RTP/RTCP协议族，完成服务器在终端的播放
+  \item[-] 优化视频播放的网络数据传输部分，保证在低宽带下的视频流畅播放
+\end{itemize}
+
+\subsection*{\years{2016-2017} \textbf{透明加解密}}
+\noindent
+\small{项目的摘要介绍，我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何}
+\begin{itemize}
+  \item[-] 对比研究常用加密算法的性能以及安全性，选择使用aes加密算法
+  \item[-] 完成对于系统的hook引擎的设计，主要用来劫持系统的复制，拖放，以及文件
+    读取部分，自动在读取和存放的时候加入加密和解密过程
+  \item[-] 优化hook引擎
+\end{itemize}
+\subsection*{\years{2012-2014} \textbf{ABCD项目}}
+\noindent
+\small{项目的摘要介绍，我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何}
+\begin{itemize}
+  \item[-] 使用什么技术完成什么模块，对于该模块自豪的地方
+  \item[-] 使用什么技术完成什么模块，以及该模块值得自豪的数据信息
+  \item[-] 使用什么技术完成什么模块
+\end{itemize}
+
+\nopagebreak[4]
+
+%\hrule
+\section*{工作技能}
+\noindent
+\begin{itemize}
+  \item[-] 熟悉C++ 11，Qt 库4年使用，boost 库2年使用
+  \item[-] 熟练Linux操作系统
+  \item[-] 熟悉python，java编写过服务器后台，熟悉它们和C++的通信过程  
+\end{itemize}
+
+\begin{center}
+{\scriptsize  Last updated: \today\- •\- 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+%\fontspec{Times New Roman}
+\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+% \href{http://nitens.org/taraborelli/cvtex}{http://nitens.org/taraborelli/cvtex}
+}
+\end{center}
+
+\end{document}
